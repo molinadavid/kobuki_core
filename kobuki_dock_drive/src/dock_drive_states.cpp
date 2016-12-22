@@ -181,6 +181,12 @@ namespace kobuki {
         next_wz = 0.33;
       }
     }
+    else // robot can't locate the dock
+    {
+      next_state = RobotDockingState::LOST;
+      next_vx = 0.0;
+      next_wz = 0.0;
+    }
 
     nstate = next_state;
     nvx = next_vx;
